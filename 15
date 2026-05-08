@@ -1,0 +1,4 @@
+num = int(input())
+order = len(str(num))
+sum_val = sum(int(digit) ** order for digit in str(num))
+print(num == sum_val)
