@@ -1,0 +1,9 @@
+from PIL import Image
+import os
+
+def resize_images(directory, width, height):
+    for filename in os.listdir(directory):
+        if filename.endswith((".jpg", ".png")):
+            img = Image.open(os.path.join(directory, filename))
+            img = img.resize((width, height))
+            img.save(os.path.join(directory, "resized_" + filename))
