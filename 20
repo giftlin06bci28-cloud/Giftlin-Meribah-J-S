@@ -1,0 +1,8 @@
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 5, 4, 5]
+mean_x, mean_y = sum(x)/len(x), sum(y)/len(y)
+num = sum((x[i] - mean_x) * (y[i] - mean_y) for i in range(len(x)))
+den = sum((x[i] - mean_x)**2 for i in range(len(x)))
+m = num / den
+c = mean_y - (m * mean_x)
+print(f"y = {m}x + {c}")
