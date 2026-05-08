@@ -1,0 +1,8 @@
+# Read the number of languages from input
+n = int(input())
+
+# Calculate the total number of courses by multiplying by 2
+total_courses = 2 * n
+
+# Output the final result
+print(total_courses)
