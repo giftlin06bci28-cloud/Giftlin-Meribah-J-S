@@ -1,0 +1,24 @@
+import json
+
+class Library:
+    def __init__(self):
+        try:
+            with open("books.json", "r") as f: self.books = json.load(f)
+        except: self.books = {}
+
+    def save(self):
+        with open("books.json", "w") as f: json.dump(self.books, f)
+
+    def add_book(self, title, author):
+        self.books[title] = {"author": author, "status": "Available"}
+        self.save()
+
+    def borrow(self, title):
+        if self.books.get(title) == "Available":
+            self.books[title]["status"] = "Borrowed"
+            self.save()
+            return True
+        return False
+
+lib = Library()
+# Usage: lib.add_book("Python Pro", "John Doe")
