@@ -1,0 +1,15 @@
+import csv
+from datetime import datetime
+
+def add_expense(amount, category):
+    with open('expenses.csv', 'a', newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow([datetime.now(), amount, category])
+
+def view_total():
+    total = 0
+    with open('expenses.csv', 'r') as f:
+        reader = csv.reader(f)
+        for row in reader:
+            total += float(row[1])
+    return total
