@@ -1,0 +1,8 @@
+nums = [int(x) for x in input("Enter numbers separated by space: ").split()]
+unique_nums = list(set(nums))
+unique_nums.sort()
+
+if len(unique_nums) < 2:
+    print("List needs at least two unique numbers")
+else:
+    print("Second largest:", unique_nums[-2])
